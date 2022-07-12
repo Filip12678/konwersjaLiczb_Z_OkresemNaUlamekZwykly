@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+<title>Strona do konwersji liczb z okresem na ułamek zwykły</title>
+<script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
+</head>
+<body>
+<h3>Na tej stronie możesz zamienić liczbę z okresem na ułamek zwykły</h3>
+<script src="skrypt.js"></script>
+<button onclick="myFunction()">Przekonwertuj liczbę z okresem na ułamek zwykły</button>
+
+
+<br><br><br><br>
+<h3>`n+ \frac{r \times 10^{-p }}{1-10^{-j}}`</h3>
+
+
+<h3>n = część bez okresu np. dla liczby 34,323(54) 34,323</h3>
+
+<h3>r = okres liczby np. dla liczby 34,323(54) 54</h3>
+
+<h3>p = ilość liczb po przecinku np. dla liczby 34,323(54) 5</h3>
+
+<h3>j = długość okresu liczby np. dla liczby 34,323(54) 2</h3>
+
+
+<h3>`34.323+ \frac{ 54 \times  10  ^ { -5  }    }{ 1- 10 ^{ -2  }    }  =  \frac{377559}{11000}`</h3>
+
+
+<br><br>
+
+<h3>Formuły do Excela zakładając, że część bez okresu znajduje się w komórce A1, okres liczby w komórce B1, licznik w komórce D1 a mianownik w komórce E1</h3>
+<h3>Formuła na licznik:</h3>
+
+<div style="white-space:pre-wrap;font-family:Consolas;color:#d8dee9;background-color:#303841;-moz-tab-size:4;tab-size:4;">=JEŻELI(CZY.LICZBA(ZNAJDŹ(",";A1));B1*POTĘGA(10;(DŁ(B1)+DŁ(PRAWY(A1;DŁ(A1)-ZNAJDŹ(",";A1))))*-1)+(E1*A1);B1*POTĘGA(10;(DŁ(B1)+DŁ(PRAWY(ZŁĄCZ.TEKST(A1;",");DŁ(ZŁĄCZ.TEKST(A1;","))-ZNAJDŹ(",";ZŁĄCZ.TEKST(A1;",")))))*-1)+(E1*ZŁĄCZ.TEKST(A1;",")))</div>
+
+<h3>Formuła na mianownik:</h3>
+
+<div style="white-space:pre-wrap;font-family:Consolas;color:#d8dee9;background-color:#303841;-moz-tab-size:4;tab-size:4;">=1-POTĘGA(10; DŁ(B1) * -1)</div>
+
+
+</body>
+</html>
